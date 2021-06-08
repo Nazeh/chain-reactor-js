@@ -2,6 +2,8 @@
 
 Frontend sample app with React.
 
+Live version: https://chain-reactor.netlify.app/
+
 ## Plan
 
 ### MVP
