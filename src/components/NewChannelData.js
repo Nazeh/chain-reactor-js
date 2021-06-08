@@ -1,6 +1,6 @@
 export const NewChannelData = ({ capacity, durationType, durationValue }) => {
   return (
-    <>
+    <div className="new-channel-data">
       <div className="row">
         <h2>Total Capacity</h2>
         <p>{capacity} sats</p>
@@ -15,6 +15,6 @@ export const NewChannelData = ({ capacity, durationType, durationValue }) => {
           {durationValue} {durationType}
         </p>
       </div>
-    </>
+    </div>
   );
 };

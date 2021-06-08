@@ -1,6 +1,6 @@
 export const openChannel = async (capacity, durationType, durationValue) => {
   await new Promise(function (resolve) {
-    setTimeout(resolve, 1000);
+    setTimeout(resolve, 10000);
   });
 
   return `lntb1u1pwz5w78pp5e8w8cr5c30xzw

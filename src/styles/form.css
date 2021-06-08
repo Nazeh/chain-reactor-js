@@ -30,6 +30,7 @@ input[type='checkbox'] {
 }
 
 .row {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0.2em 0;
@@ -42,7 +43,7 @@ input[type='checkbox'] {
 .back {
   color: black;
   font-size: 1.5em;
-  margin: auto;
+  margin: 1em auto;
   display: block;
   width: fit-content;
   position: relative;
@@ -69,4 +70,9 @@ button[role='radio'] {
   width: 20px;
   height: 20px;
   border-radius: 9999px;
+}
+
+.new-channel-data {
+  width: 100%;
+  font-size: 1.2em;
 }
