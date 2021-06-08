@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2em;
 }
 
 .app-header h1 {
-  font-size: 2em;
+  font-size: 1.6em;
   font-weight: 700;
 }
 

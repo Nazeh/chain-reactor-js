@@ -1,6 +1,8 @@
 .app {
   margin: auto;
   width: 540px;
+  max-width: 100vw;
+  min-width: 320px;
   height: 920px;
   background-color: #f4f4f4;
   padding: 2rem;

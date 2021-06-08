@@ -1,15 +1,31 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { NewChannelData } from './NewChannelData';
+import { types } from '../store';
+import { StoreContext } from '../App';
 
 export const NewChannelForm = () => {
-  const [capacity, setCapacity] = useState('');
+  // Add a default capacity
+  // to make it easier to test the demo.
+  const [capacity, setCapacity] = useState(100);
   const [durationValue, setDurationValue] = useState(20);
   const [durationType, setDurationType] = useState('Days');
 
   let history = useHistory();
 
   const canPay = Number(capacity) > 0;
+
+  const { _, dispatch } = useContext(StoreContext);
+
+  const handleClickPay = () => {
+    if (canPay) {
+      history.push('/new-channel/payment');
+      dispatch({
+        type: types.SET_NEW_CHANNEL_CONFIG,
+        value: { capacity, durationType, durationValue },
+      });
+    }
+  };
 
   return (
     <>
@@ -45,13 +61,7 @@ export const NewChannelForm = () => {
       <button
         className="submit-btn"
         disabled={!canPay}
-        onClick={() => {
-          if (canPay) {
-            history.push(
-              `/new-channel/payment?capacity=${capacity}&duration-value=${durationValue}&duration-type=${durationType}`,
-            );
-          }
-        }}
+        onClick={handleClickPay}
       >
         Pay Now
       </button>

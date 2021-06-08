@@ -1,26 +1,19 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { NewChannelData } from '../components/NewChannelData';
 import { openChannel } from '../api';
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+import { StoreContext } from '../App';
 
 export const ChannelPayment = () => {
-  let query = useQuery();
+  const { store } = useContext(StoreContext);
+  const { newChannelConfig } = store;
+  const { capacity, durationType, durationValue } = newChannelConfig;
 
-  let capacity = Number(query.get('capacity'));
-  const durationType = query.get('duration-type');
-  const durationValue = query.get('duration-value');
-
-  const [pending, setPending] = useState(true);
-  let invoice;
+  const [invoice, setInvoice] = useState();
 
   useEffect(() => {
     openChannel().then((response) => {
-      invoice = response;
-      setPending(false);
+      setInvoice(response);
     });
   });
 
@@ -30,15 +23,18 @@ export const ChannelPayment = () => {
         Go back
       </Link>
       <div className="qr-code"></div>
-      <NewChannelData
-        capacity={capacity}
-        durationType={durationType}
-        durationValue={durationValue}
-      />
-      <p>{invoice}</p>
+      {invoice ? (
+        <p>{invoice}</p>
+      ) : (
+        <NewChannelData
+          capacity={capacity}
+          durationType={durationType}
+          durationValue={durationValue}
+        />
+      )}
 
-      <button className={`submit-btn ${pending ? 'pending' : ''}`} disabled>
-        {pending ? 'Awaiting Payment' : 'Payment Confirmed'}
+      <button className={`submit-btn ${invoice ? '' : 'pending'}`} disabled>
+        {invoice ? 'Payment Confirmed' : 'Awaiting Payment'}
       </button>
     </>
   );

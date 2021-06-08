@@ -6,13 +6,11 @@ export const Header = ({ title, close }) => {
     <header className="app-header">
       <h1>{title}</h1>
 
-      <nav>
-        {close ? (
-          <Link className="menu-btn close" to="/" />
-        ) : (
-          <Link className="menu-btn" to="/menu" />
-        )}
-      </nav>
+      {close ? (
+        <Link className="menu-btn close" to="/" />
+      ) : (
+        <Link className="menu-btn" to="/menu" />
+      )}
     </header>
   );
 };

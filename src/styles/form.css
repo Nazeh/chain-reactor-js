@@ -62,3 +62,11 @@ input[type='checkbox'] {
   top: 6px;
   transform: rotate(-45deg);
 }
+
+button[role='radio'] {
+  border: 1px solid;
+  background: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+}
