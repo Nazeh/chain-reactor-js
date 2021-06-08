@@ -54,6 +54,7 @@ export const NewChannelForm = () => {
               }}
             />
             <select
+              value={durationType}
               onChange={(e) => {
                 setDurationType(e.target.value);
               }}
