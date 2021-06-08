@@ -1,0 +1,21 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.app-header h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.app-header .menu-btn {
+  background: none;
+  border: none;
+  display: block;
+  width: 30px;
+  height: 25px;
+  border-top: 4px solid;
+  border-bottom: 4px solid;
+  cursor: pointer;
+}
