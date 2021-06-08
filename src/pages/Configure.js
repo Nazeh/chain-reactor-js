@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Page } from '../layouts/Page';
-import { NewChannelForm } from '../components/NewChannelForm';
+import { NewChannelForm } from '../components/ChannelForm';
+import { InvoiceForm } from '../components/InvoiceForm';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import * as Label from '@radix-ui/react-label';
 import '../styles/Configure.css';
@@ -26,7 +27,7 @@ export const ConfigurePage = ({ initialView = 'channel' }) => {
           Pay Invoice
         </Label.Root>
       </RadioGroup.Root>
-      {view === 'channel' ? <NewChannelForm /> : <p>WIP</p>}
+      {view === 'channel' ? <NewChannelForm /> : <InvoiceForm />}
     </Page>
   );
 };

@@ -64,7 +64,7 @@ input[type='checkbox'] {
   transform: rotate(-45deg);
 }
 
-.new-channel-data {
+.data {
   width: 100%;
   font-size: 1.2em;
 }
@@ -103,4 +103,13 @@ input[type='checkbox'] {
 
 .form .form-inputs {
   flex-grow: 1;
+}
+
+.ln-invoice.label {
+  margin-top: 3em;
+  margin-bottom: 5em;
+}
+
+.ln-invoice.label input {
+  width: 100%;
 }

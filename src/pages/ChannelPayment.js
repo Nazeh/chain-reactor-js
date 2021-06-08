@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NewChannelData } from '../components/NewChannelData';
+import { NewChannelData } from '../components/ChannelData';
 import { openChannel } from '../api';
 import { StoreContext } from '../App';
 import QRCode from 'qrcode.react';

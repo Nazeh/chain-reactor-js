@@ -1,6 +1,7 @@
 import './styles/App.css';
 import { ConfigurePage } from './pages/Configure';
 import { ChannelPayment } from './pages/ChannelPayment';
+import { InvoicePayment } from './pages/InvoicePayment';
 import { MenuPage } from './pages/MenuPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useReducer, createContext } from 'react';
@@ -22,11 +23,8 @@ export const App = () => {
             <Route path="/new-channel/payment">
               <ChannelPayment></ChannelPayment>
             </Route>
-            <Route path="/new-channel">
-              <ConfigurePage></ConfigurePage>
-            </Route>
-            <Route path="/pay-invoice">
-              <ConfigurePage view="invoice"></ConfigurePage>
+            <Route path="/invoice/payment">
+              <InvoicePayment></InvoicePayment>
             </Route>
             <Route path="/">
               <ConfigurePage></ConfigurePage>

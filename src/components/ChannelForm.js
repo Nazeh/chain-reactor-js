@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { NewChannelData } from './NewChannelData';
+import { NewChannelData } from './ChannelData';
 import { types } from '../store';
 import { StoreContext } from '../App';
 import * as Label from '@radix-ui/react-label';
