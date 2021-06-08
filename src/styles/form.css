@@ -1,0 +1,64 @@
+.submit-btn {
+  background-color: #2f2f2f;
+  border: none;
+  color: #fff;
+
+  display: block;
+  width: 100%;
+
+  font-size: 1.5em;
+  font-weight: 600;
+
+  padding: 0.5em;
+
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  cursor: default;
+  opacity: 0.2;
+}
+
+.submit-btn.pending {
+  background-color: #616c82;
+  opacity: 1;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2em 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.back {
+  color: black;
+  font-size: 1.5em;
+  margin: auto;
+  display: block;
+  width: fit-content;
+  position: relative;
+}
+
+.back::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid;
+  border-bottom: none;
+  border-right: none;
+
+  position: absolute;
+  left: -14px;
+  top: 6px;
+  transform: rotate(-45deg);
+}
