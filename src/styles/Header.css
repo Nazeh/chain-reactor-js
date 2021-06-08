@@ -31,3 +31,26 @@
   height: 4px;
   background: black;
 }
+
+.app-header .menu-btn.close {
+  border-radius: 50%;
+  border: 2px solid;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-header .menu-btn.close::after {
+  display: none;
+}
+.app-header .menu-btn.close::before {
+  content: 'x';
+  display: block;
+  font-weight: bold;
+  line-height: 0.1em;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1px;
+}

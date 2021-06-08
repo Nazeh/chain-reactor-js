@@ -1,11 +1,13 @@
 import { Menu } from '../layouts/Menu';
+import '../styles/menu.css';
+import { Link } from 'react-router-dom';
 
 export const MenuPage = () => {
   return (
     <Menu title="Menu">
       <nav>
-        <a>Contact US</a>
-        <a>FAQ</a>
+        <Link to="/">Contact US</Link>
+        <Link to="/">FAQ</Link>
       </nav>
     </Menu>
   );

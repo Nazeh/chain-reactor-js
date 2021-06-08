@@ -7,9 +7,9 @@ export const Header = ({ title, close }) => {
       <h1>{title}</h1>
 
       {close ? (
-        <Link className="menu-btn close" to="/" />
+        <Link className="menu-btn close" to="/"></Link>
       ) : (
-        <Link className="menu-btn" to="/menu" />
+        <Link className="menu-btn" to="/menu"></Link>
       )}
     </header>
   );

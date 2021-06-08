@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { NewChannelData } from './NewChannelData';
 import { types } from '../store';
 import { StoreContext } from '../App';
+import * as Label from '@radix-ui/react-label';
 
 export const NewChannelForm = () => {
   // Add a default capacity
@@ -28,43 +29,50 @@ export const NewChannelForm = () => {
   };
 
   return (
-    <>
-      <label>Capacity</label>
-      <input
-        type="number"
-        value={capacity}
-        onChange={(e) => {
-          setCapacity(e.target.value);
-        }}
-      />
-      <label>Select Channel Expiry</label>
-      <input
-        type="number"
-        value={durationValue}
-        onChange={(e) => {
-          setDurationValue(e.target.value);
-        }}
-      />
-      <select
-        onChange={(e) => {
-          setDurationType(e.target.value);
-        }}
-      >
-        <option>Hours</option>
-        <option>Days</option>
-      </select>
-      <NewChannelData
-        capacity={capacity}
-        durationType={durationType}
-        durationValue={durationValue}
-      />
-      <button
-        className="submit-btn"
-        disabled={!canPay}
-        onClick={handleClickPay}
-      >
+    <form className="form" onSubmit={handleClickPay}>
+      <div className="form-inputs">
+        <Label.Root className="capacity label">
+          Capacity
+          <div className="row">
+            <input
+              type="number"
+              value={capacity}
+              onChange={(e) => {
+                setCapacity(e.target.value);
+              }}
+            />
+          </div>
+        </Label.Root>
+        <Label.Root className="expiry label">
+          Select Channel Expiry
+          <div className="row">
+            <input
+              type="number"
+              value={durationValue}
+              onChange={(e) => {
+                setDurationValue(e.target.value);
+              }}
+            />
+            <select
+              onChange={(e) => {
+                setDurationType(e.target.value);
+              }}
+            >
+              <option>Hours</option>
+              <option>Days</option>
+            </select>
+          </div>
+        </Label.Root>
+
+        <NewChannelData
+          capacity={capacity}
+          durationType={durationType}
+          durationValue={durationValue}
+        />
+      </div>
+      <button className="submit-btn" disabled={!canPay}>
         Pay Now
       </button>
-    </>
+    </form>
   );
 };

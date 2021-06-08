@@ -64,15 +64,43 @@ input[type='checkbox'] {
   transform: rotate(-45deg);
 }
 
-button[role='radio'] {
-  border: 1px solid;
-  background: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 9999px;
-}
-
 .new-channel-data {
   width: 100%;
   font-size: 1.2em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.form input,
+.form select {
+  border: 1px solid #aaaa;
+  border-radius: 0.5em;
+  background: #fff;
+  font-size: 1em;
+  padding: 0.7em;
+}
+
+.capacity input {
+  flex-grow: 1;
+}
+
+.form .label {
+  margin-bottom: 2em;
+  display: block;
+}
+
+.form span[role='label'] {
+  font-size: 1.3em;
+}
+
+.form span[role='label'] .row {
+  margin: 0.5em 0;
+}
+
+.form .form-inputs {
+  flex-grow: 1;
 }

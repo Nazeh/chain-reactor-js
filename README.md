@@ -6,18 +6,19 @@ Frontend sample app with React.
 
 ### MVP
 
-[ ] Simple Form control
-[ ] Simple pages switches
-[ ] Mock api
-[ ] Lightning invoice encoding
-[ ] Responsive design
+[x] Simple Form control
+[x] Simple pages switches
+[x] Mock api
+[x] Lightning invoice encoding mocking
+[x] Responsive design
 
 ### Secondary features
 
 [ ] Better Form control with Formik?
 [ ] Support QR code
 [ ] Proptypes
-[ ] Use React-router
+[ ] Real Lightning invoice encoding
+[x] Use React-router
 [ ] Animation for routing
 [ ] Popover for info
 [ ] Ful accessibility and keyboard navigation support
@@ -25,3 +26,4 @@ Frontend sample app with React.
 [ ] Add Contact us and FAQ panels
 [ ] PWA
 [ ] Copy invoic on click
+[ ] Better styling for inputs

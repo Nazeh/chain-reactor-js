@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Page } from '../layouts/Page';
 import { NewChannelForm } from '../components/NewChannelForm';
 import * as RadioGroup from '@radix-ui/react-radio-group';
+import * as Label from '@radix-ui/react-label';
+import '../styles/Configure.css';
 
 export const ConfigurePage = ({ initialView = 'channel' }) => {
   const [view, setView] = useState(initialView);
@@ -9,31 +11,22 @@ export const ConfigurePage = ({ initialView = 'channel' }) => {
   return (
     <Page title="Configure">
       <RadioGroup.Root
+        className="view-switch"
         value={view}
         onValueChange={(e) => {
           setView(e.target.value);
         }}
       >
-        <RadioGroup.Item value="channel">New Channel</RadioGroup.Item>
-        <RadioGroup.Item value="invoice">Pay Invoice</RadioGroup.Item>
+        <Label.Root>
+          <RadioGroup.Item value="channel"></RadioGroup.Item>
+          New Channel
+        </Label.Root>
+        <Label.Root>
+          <RadioGroup.Item value="invoice"></RadioGroup.Item>
+          Pay Invoice
+        </Label.Root>
       </RadioGroup.Root>
-      <input
-        type="checkbox"
-        checked={view === 0}
-        onChange={(e) => {
-          setView(0);
-        }}
-      ></input>
-      <label>New Channel</label>
-      <input
-        type="checkbox"
-        checked={view === 1}
-        onChange={(e) => {
-          setView(1);
-        }}
-      ></input>
-      <label>Pay Invoice</label>
-      {view === 'channel' ? <NewChannelForm /> : <p>somoething else</p>}
+      {view === 'channel' ? <NewChannelForm /> : <p>WIP</p>}
     </Page>
   );
 };
