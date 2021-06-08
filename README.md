@@ -15,7 +15,7 @@ Frontend sample app with React.
 ### Secondary features
 
 - [ ] Better Form control with Formik?
-- [ ] Support QR code
+- [x] Support QR code
 - [ ] Proptypes
 - [ ] Real Lightning invoice encoding
 - [x] Use React-router
@@ -25,5 +25,5 @@ Frontend sample app with React.
 - [ ] Main page with list of channels
 - [ ] Add Contact us and FAQ panels
 - [ ] PWA
-- [ ] Copy invoic on click
-- [ ] Better styling for inputs
+- [ ] Copy invoice on click
+- [ ] Better styling for inputs (apperance)
